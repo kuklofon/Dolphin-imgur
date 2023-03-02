@@ -12,13 +12,13 @@ async def upload_image(session, image_path):
         response_json = await response.json()
         link = response_json["data"]["link"]
         subprocess.run(["xclip", "-sel", "clip"], input=link, encoding='ascii')
-        print(f"Uploaded {image_path}, link copied to clipboard: {link}")
+        print(f"Загружено {image_path}, ссылка скопирована в буфер: {link}")
 
 async def main():
     async with aiohttp.ClientSession() as session:
         tasks = [upload_image(session, image) for image in image_paths]
         await asyncio.gather(*tasks)
-    subprocess.run(["notify-send", "imgur", "All images have been uploaded!"])
+    subprocess.run(["notify-send", "imgur", "Все изображения загружены!"])
 
 if __name__ == "__main__":
     config_file_path = os.path.expanduser("~/.config/imgur/config")

@@ -9,4 +9,5 @@ X-KDE-Priority=TopLevel
 Exec=imgur %U
 Name=Upload to imgur.com
 Name[nl]=Uploaden naar imgur.com
+Name[ru]=Загрузить на imgur.com
 Icon=/usr/share/pixmaps/imgur.png
